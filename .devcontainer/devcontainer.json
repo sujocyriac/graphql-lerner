@@ -17,11 +17,11 @@
   //     ]
   //   }
   // },
-  "portsAttributes": {
-    "3000": {
-      "label": "Application",
-      "onAutoForward": "openPreview"
-    }
-  },
+  // "portsAttributes": {
+  //   "3000": {
+  //     "label": "Application",
+  //     "onAutoForward": "openPreview"
+  //   }
+  // },
   "forwardPorts": [3000]
 }
