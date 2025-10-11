@@ -1,0 +1,21 @@
+{
+  "name": "Node.js Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "workspaceMount": "source=${localWorkspaceFolderBasename}_workspace_volume,target=/workspace,type=volume",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "[ -f package.json ] && npm install || true",
+  "remoteUser": "vscode"
+}
