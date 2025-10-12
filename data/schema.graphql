@@ -1,9 +1,26 @@
+enum ProductType {
+  ELECTRONICS
+  BOOKS
+  CLOTHING
+  HOME
+  BEAUTY
+}
+
+type StoreLocation {
+  place: String
+  country: String
+  lattitude: Int
+  longitude: Int
+}
+
 type Product {
   id: ID!
   name: String
   description: String
   price: Float
   inStock: Boolean
+  type: ProductType
+  storeLocations: [StoreLocation]
 }
 
 type Query {
@@ -12,11 +29,12 @@ type Query {
 }
 
 input ProductInput {
-  id: ID!
-  name: String
+  name: String!
   description: String
   price: Float!
-  inStock: Boolean
+  inStock: Boolean!
+  type: ProductType!
+  storeLocations: [StoreLocation]!
 }
 
 type Mutation {

@@ -1,15 +1,27 @@
-import uuidv4 from "uuid";
+import { v4 as uuidv4 } from "uuid";
+import db from "./db.js";
 
 export class Resolver {
-  static products = [];
-
-  addProducts({ input: { name, description, price, inStock } = {} } = {}) {
+  addProducts({
+    input: { name, description, price, inStock, type } = {},
+  } = {}) {
     const id = uuidv4();
-    Resolver.products.push({ id, name, description, price, inStock });
+
+    // Add a user
+    db.push("/products[]", {
+      id,
+      name,
+      description,
+      price,
+      inStock,
+      type,
+    });
+
     return id;
   }
 
-  getProduct(id) {
-    return Resolver.products.find((product) => product.id === id);
+  getProduct({ id } = {}) {
+    const products = db.getData("/products");
+    return products.find((product) => product.id === id);
   }
 }
