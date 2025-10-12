@@ -6,10 +6,10 @@
   },
   "waitFor": "onCreateCommand",
   //"updateContentCommand": "npm install",
-  "postCreateCommand": "",
-  // "postAttachCommand": {
-  //   "server": "npm start"
-  // },
+  "postCreateCommand": "git config --global user.email \"sujo.cyriac21@gmail.com\" && git config --global user.name \"Sujo Cyriac\"",
+  "postAttachCommand": {
+    "server": "npm start"
+  },
   // "customizations": {
   //   "codespaces": {
   //     "openFiles": [
