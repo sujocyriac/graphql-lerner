@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  node:
+    image: mcr.microsoft.com/devcontainers/javascript-node:20
+    container_name: graphql-node
+    volumes:
+      - graphql-lerner-volume:/workspace
+    working_dir: /workspace
+    command: sleep infinity   # Node sleeps until you start server manually
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URL: mongodb://mongo:27017/devdb
+    networks:
+      - devnet
+    ports:
+      - "3000:3000"   # Node / GraphQL API
+      - "4000:4000"   # Optional GraphQL port
+
+  mongo:
+    image: mongo:7
+    container_name: graphql-mongo
+    restart: unless-stopped
+    volumes:
+      - graphql-lerner-mongodb-data:/data/db
+    networks:
+      - devnet
+    ports:
+      - "27017:27017"
+
+networks:
+  devnet:
+
+volumes:
+  graphql-lerner-volume:
+  graphql-lerner-mongodb-data:
