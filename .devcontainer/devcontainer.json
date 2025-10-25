@@ -1,0 +1,9 @@
+{
+  "name": "Node + Mongo Dev Container",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "node",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3000, 4000, 27017],
+  "postCreateCommand": "git config --global user.email 'sujo.cyriac21@gmail.com' && git config --global user.name 'Sujo Cyriac' && npm install",
+  "remoteUser": "node"
+}
