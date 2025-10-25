@@ -1,22 +1,38 @@
 import express from "express";
+import path from "path";
 import { graphqlHTTP } from "express-graphql";
-import { schema } from "./data/build-schema";
-import { Resolver } from "./data/resolver";
+import { loadFilesSync } from '@graphql-tools/load-files';
+import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge';
+import { makeExecutableSchema } from '@graphql-tools/schema';
+
+
 
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("A GraphQL API is running at /graphql");
 });
 
-const rootValue = new Resolver();
+
+const typeDefsArray = loadFilesSync(path.join(__dirname, 'schema', './**/*.graphql'));
+const resolversArray = loadFilesSync(path.join(__dirname, 'schema', './**/*resolver.js'));
+
+
+const typeDefs = mergeTypeDefs(typeDefsArray);
+const resolvers = mergeResolvers(resolversArray);
+
+export const schema = makeExecutableSchema({
+  typeDefs,
+  resolvers,
+});
+
+//console.log("GraphQL schema created", schema);
 
 app.use(
   "/graphql",
   graphqlHTTP({
     schema,
-    rootValue,
     graphiql: true,
   })
 );

@@ -28,13 +28,21 @@ type Query {
   getProduct(id: ID!): Product
 }
 
+input StoreLocationInput {
+  place: String
+  country: String
+  lattitude: Int
+  longitude: Int
+}
+
+
 input ProductInput {
   name: String!
   description: String
   price: Float!
   inStock: Boolean!
   type: ProductType!
-  storeLocations: [StoreLocation]!
+  storeLocations: [StoreLocationInput]
 }
 
 type Mutation {
