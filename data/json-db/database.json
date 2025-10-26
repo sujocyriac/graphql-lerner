@@ -1,1 +1,100 @@
-{"products":[{"id":"bc96fa2e-3f38-42ed-8a82-43cf5df79870","name":"Mac Book","description":"A Good laptop","price":120000,"inStock":true,"type":"ELECTRONICS"}]}
+{
+    "products": [
+        {
+            "id": "bc96fa2e-3f38-42ed-8a82-43cf5df79870",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "4048f5c1-75a6-423d-81c5-85a3d2aab01a",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "b3b79640-e01d-4dff-9e60-b1a0de72e8db",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "6a1ce828-1ebe-4824-bfcf-b22e8fe693c0",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "fa44e13e-1d85-4fde-a88e-985bf9e1dbe5",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "edaa5dd2-c036-4983-a5b3-dc3d2b169db9",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "1634a92d-5f00-46d8-87a9-a016681e873c",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "aaaec597-a1dc-4008-8839-db8eb73f0d37",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "f2c9286c-2202-4778-ad3c-3100ad9952e6",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "9c1d019c-a840-4ece-9ffa-8df9a94cba4e",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "9f2219c7-3f33-4180-a00b-87b45badb511",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        },
+        {
+            "id": "ce632afe-402e-4308-8092-39a4b29d3d03",
+            "name": "Mac Book",
+            "description": "A Good laptop",
+            "price": 120000,
+            "inStock": true,
+            "type": "ELECTRONICS"
+        }
+    ]
+}

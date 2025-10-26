@@ -1,8 +1,0 @@
-{
-    "id": "eba52849-3d52-4224-8017-14eff88ad755",
-    "name": "Mac Book",
-    "description": "A Good laptop",
-    "price": 120000,
-    "inStock": true,
-    "type": "ELECTRONICS"
-}

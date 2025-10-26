@@ -24,7 +24,6 @@ type Product {
 }
 
 type Query {
-  user: String
   getProduct(id: ID!): Product
 }
 
@@ -35,7 +34,6 @@ input StoreLocationInput {
   longitude: Int
 }
 
-
 input ProductInput {
   name: String!
   description: String
@@ -45,6 +43,24 @@ input ProductInput {
   storeLocations: [StoreLocationInput]
 }
 
+input ProductUpdate {
+  id: ID!
+  name: String
+  description: String
+  price: Float
+  inStock: Boolean
+  type: ProductType
+  storeLocations: [StoreLocationInput]
+}
+
 type Mutation {
   addProducts(input: ProductInput): ID
+}
+
+type Mutation {
+  updateProducts(input: ProductUpdate): Product
+}
+
+type Query {
+  deleteProduct(id: ID): ID
 }

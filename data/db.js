@@ -1,37 +1,32 @@
-import { JsonDB, Config } from "node-json-db";
-import path from "path";
+import { JsonDbAdapter } from "./json-db";
+import { MongodbAdapter } from "./mongo-db";
 
 export class Db {
+  static _instance = null;
 
-    static _instance = null;
-
-    constructor() {
-        if (Db._instance) {
-            return Db._instance;
-        }
-        console.log("Initializing JSON DB instance");
-        const filename = path.join(__dirname, 'json-db/database');
-        this.db = new JsonDB(new Config(filename, true, false, '/'));
-        Db._instance = this;
+  constructor() {
+    if (Db._instance) {
+      return Db._instance;
     }
+    console.log("Initializing JSON DB instance");
 
-    getDB() {
-        return this.db;
-    }
+    this.db = new MongodbAdapter();
+    Db._instance = this;
+  }
 
-    // convenience wrappers
-    async get(path) {
-        return await this.db.getData(path);
-    }
+  async get(id) {
+    return await this.db.get(id);
+  }
 
-    push(path, data, override = true) {
-        console.log("Pushing data to DB at path:", path, data);
-        return this.db.push(path, data, override);
-    }
+  async push(path, data, override = true) {
+    return this.db.push(path, data, override);
+  }
 
-    delete(path) {
-        return this.db.delete(path);
-    }
+  async put(id, data) {
+    return await this.db.put(id, data);
+  }
 
-
+  delete(id) {
+    return this.db.delete(id);
+  }
 }
